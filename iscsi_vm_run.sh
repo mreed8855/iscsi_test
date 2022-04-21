@@ -18,7 +18,14 @@ else
     release=$1
 fi
 
-sudo apt install sshpass uvtool
+sudo apt install sshpass uvtool -y
+
+mkdir -p .ssh
+if [ ! -e .ssh/id_rsa ]; then
+	ssh-keygen -f .ssh/id_rsa -t rsa -N ''
+else
+        echo "ssh keys already exists"
+fi
 
 
 sudo uvt-simplestreams-libvirt query | grep $release
