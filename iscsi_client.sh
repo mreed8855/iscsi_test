@@ -25,7 +25,7 @@ cleanup_iscsi_dir_dev()
 	sudo iscsiadm -m node --targetname $ISCSI_LUN --portal $ISCSI_TARGET  --logout
 }
 apt update -y
-apt-get install open-iscsi lsscsi -y
+apt-get install stress-ng open-iscsi lsscsi -y
 
 # Create a backup of the iscsid.conf file
 if [ -f "$ISCSI_ISCSID.bak" ]; then
