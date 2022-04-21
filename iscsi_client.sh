@@ -107,6 +107,7 @@ fi
 ls $MOUNTED_DIR
 sudo lsblk
 # | grep $ISCI_DEV
+sudo stress-ng --temp-path $MOUNTED_DIR -d 5 -t 1m
 
 cleanup_iscsi_dir_dev $MOUNTED_DIR $ISCI_DEV
 echo "done"

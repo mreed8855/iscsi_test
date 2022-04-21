@@ -18,6 +18,7 @@ else
     release=$1
 fi
 
+apt update -y
 sudo apt install sshpass uvtool -y
 
 mkdir -p .ssh
